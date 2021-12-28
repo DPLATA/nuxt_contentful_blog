@@ -28,9 +28,9 @@ export default {
 
   // Environment variables
    env: {
-    CONTENTFUL_SPACE: process.env.CONTENTFUL_SPACE,
-    CONTENTFUL_ACCESSTOKEN: process.env.CONTENTFUL_ACCESSTOKEN,
-    CONTENTFUL_ENVIRONMENT: process.env.CONTENTFUL_ENVIRONMENT
+    CONTENTFUL_SPACE: process.env.CONTENTFULSPACE,
+    CONTENTFUL_ACCESSTOKEN: process.env.CONTENTFULACCESSTOKEN,
+    CONTENTFUL_ENVIRONMENT: process.env.CONTENTFULENVIRONMENT
   },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
