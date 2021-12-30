@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <p class="back">
-      <nuxt-link exact to="/">⟵ Back to Home</nuxt-link>
+      <nuxt-link exact to="/">⟵ Regresar</nuxt-link>
     </p>
     <h1>{{ post.fields.title }}</h1>
     <!--div
@@ -38,6 +38,10 @@ export default {
 </script>
 
 <style lang="css" scoped>
+* {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
 .back {
   margin-top: 20px;
 }
