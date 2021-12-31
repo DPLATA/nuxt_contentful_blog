@@ -40,6 +40,21 @@ export default {
 <style lang="css" scoped>
 * {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #151a1e;
+}
+
+.container {
+margin: 2.618em auto;
+max-width: 37.577em;
+position: relative;
+text-align: left;
+}
+
+article {
+  text-align: justify;
+word-break: break-word;
+
+font-size: 1rem;
 }
 
 .back {
