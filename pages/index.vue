@@ -171,7 +171,7 @@ export default {
    };
   },
   head: {
-   title: "planeta_plata"
+   title: "Plata planet"
   },
   computed: {
    posts() {
