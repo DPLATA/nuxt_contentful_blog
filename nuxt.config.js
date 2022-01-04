@@ -13,7 +13,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nuxt_contentful_blog',
+    title: 'plata_planet',
     htmlAttrs: {
       lang: 'en',
     },
