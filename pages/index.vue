@@ -1,36 +1,43 @@
 <template>
   <main>
-   <div class="container">
-     <h1 class="title">Plata planet</h1>
-     <section v-for="post in posts" :key="post.fields.slug">
-      
-       <!-- REFACTOR NEEDED -->
-       <div class="container">
-  <div class="card">
-    <div class="card__header">
-      <img :src="
-           `https:${post.fields.heroImage.fields.file.url}`" alt="card__image" class="card__image" width="600">
-    </div>
-    <div class="card__body">
-      <h4><nuxt-link :to="post.fields.slug">{{ post.fields.title }}</nuxt-link></h4>
-      <p>
-         {{ post.fields.description }}<br /><br />
-         <nuxt-link :to="post.fields.slug" class="more">Leer más⟶</nuxt-link>
-       </p>
-    </div>
-    <div class="card__footer">
-      <div class="user">
-        <div class="user__info">
-          <h5>{{ post.fields.author.fields.name }}</h5>
+    <div class="container">
+      <h1 class="title">Plata planet</h1>
+      <section v-for="post in posts" :key="post.fields.slug">
+        <!-- REFACTOR NEEDED -->
+        <div class="container">
+          <div class="card">
+            <div class="card__header">
+              <img
+                :src="`https:${post.fields.heroImage.fields.file.url}`"
+                alt="card__image"
+                class="card__image"
+                width="600"
+              />
+            </div>
+            <div class="card__body">
+              <h4>
+                <nuxt-link :to="post.fields.slug">{{
+                  post.fields.title
+                }}</nuxt-link>
+              </h4>
+              <p v-html="$md.render(post.fields.description)">
+                <br /><br />
+                <nuxt-link :to="post.fields.slug" class="more"
+                  >Leer más⟶</nuxt-link
+                >
+              </p>
+            </div>
+            <div class="card__footer">
+              <div class="user">
+                <div class="user__info">
+                  <h5>{{ post.fields.author.fields.name }}</h5>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-
-
-       <!--div
+        <!--div
          class="image"
          :style="
            `background: url(https:${post.fields.heroImage.fields.file.url}) center center no-repeat`
@@ -44,13 +51,10 @@
          {{ post.fields.description }}<br />
          <nuxt-link :to="post.fields.slug" class="more">Leer ⟶</nuxt-link>
        </p-->
-     </section>
-   </div>
- </main>
+      </section>
+    </div>
+  </main>
 </template>
-
-
-
 
 <style scoped>
 *,
@@ -90,49 +94,45 @@ img {
   flex-direction: column;
   width: clamp(20rem, calc(20rem + 2vw), 22rem);
   overflow: hidden;
-  box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
   border-radius: 1em;
-  background: #ECE9E6;
-background: linear-gradient(to right, #FFFFFF, #ECE9E6);
-
+  background: #ece9e6;
+  background: linear-gradient(to right, #ffffff, #ece9e6);
 }
-
-
 
 .card__body {
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
 }
-
 
 .tag {
   align-self: flex-start;
-  padding: .25em .75em;
+  padding: 0.25em 0.75em;
   border-radius: 1em;
-  font-size: .75rem;
+  font-size: 0.75rem;
 }
 
 .tag + .tag {
-  margin-left: .5em;
+  margin-left: 0.5em;
 }
 
 .tag-blue {
-  background: #56CCF2;
-background: linear-gradient(to bottom, #2F80ED, #56CCF2);
+  background: #56ccf2;
+  background: linear-gradient(to bottom, #2f80ed, #56ccf2);
   color: #fafafa;
 }
 
 .tag-brown {
-  background: #D1913C;
-background: linear-gradient(to bottom, #FFD194, #D1913C);
+  background: #d1913c;
+  background: linear-gradient(to bottom, #ffd194, #d1913c);
   color: #fafafa;
 }
 
 .tag-red {
   background: #cb2d3e;
-background: linear-gradient(to bottom, #ef473a, #cb2d3e);
+  background: linear-gradient(to bottom, #ef473a, #cb2d3e);
   color: #fafafa;
 }
 
@@ -149,7 +149,7 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
 
 .user {
   display: flex;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
 .user__image {
@@ -161,22 +161,21 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
 }
 </style>
 
-
 <script>
 export default {
   name: 'IndexPage',
   data() {
-   return {
-     slug: this.$route.params.slug
-   };
+    return {
+      slug: this.$route.params.slug,
+    }
   },
   head: {
-   title: "Plata planet"
+    title: 'Plata planet',
   },
   computed: {
-   posts() {
-     return this.$store.state.posts;
-   }
-  }
+    posts() {
+      return this.$store.state.posts
+    },
+  },
 }
 </script>
